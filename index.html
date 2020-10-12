@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Quicksand:wght@500&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/186a1fd4fb.js" crossorigin="anonymous"></script>
+    <title>Alexander McComb</title>
+</head>
+<body>
+    <div id="container">
+        <div id="welcome-banner">
+            Welcome to my Universe.
+        </div>
+        <div id="light-dark-switch">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="36px" height="36px"><path d="M0 0h24v24H0z" fill="none"/><path d="M10 2c-1.82 0-3.53.5-5 1.35C7.99 5.08 10 8.3 10 12s-2.01 6.92-5 8.65C6.47 21.5 8.18 22 10 22c5.52 0 10-4.48 10-10S15.52 2 10 2z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="36px" height="36px"><path d="M0 0h24v24H0z" fill="none"/><path d="M6.76 4.84l-1.8-1.79-1.41 1.41 1.79 1.79 1.42-1.41zM4 10.5H1v2h3v-2zm9-9.95h-2V3.5h2V.55zm7.45 3.91l-1.41-1.41-1.79 1.79 1.41 1.41 1.79-1.79zm-3.21 13.7l1.79 1.8 1.41-1.41-1.8-1.79-1.4 1.4zM20 10.5v2h3v-2h-3zm-8-5c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm-1 16.95h2V19.5h-2v2.95zm-7.45-3.91l1.41 1.41 1.79-1.8-1.41-1.41-1.79 1.8z"/></svg>
+        </div>
+        <div id="info-switch">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="36px" height="36px"><path d="M0 0h24v24H0z" fill="none"/><circle cx="7.2" cy="14.4" r="3.2"/><circle cx="14.8" cy="18" r="2"/><circle cx="15.2" cy="8.8" r="4.8"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="36px" height="36px"><path d="M0 0h24v24H0z" fill="none"/><circle cx="7.2" cy="14.4" r="3.2"/><circle cx="14.8" cy="18" r="2"/><circle cx="15.2" cy="8.8" r="4.8"/></svg>
+        </div>
+        <canvas id="space-time"canvas></canvas>
+        <div id="project-container">
+            <div id="project-close">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="36px" height="36px"><path d="M0 0h24v24H0z" fill="none"/><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="36px" height="36px"><path d="M0 0h24v24H0z" fill="none"/><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+            </div>
+            <div id="planet-one"></div>
+            <div id="planet-one-text" class="button-style">Who am I?</div>
+            <div id="planet-two"></div>
+            <div id="planet-two-text" class="button-style">Shelf</div>
+            <div id="planet-three"></div>
+            <div id="planet-three-text" class="button-style">Cache Up</div>
+            <div id="planet-four"></div>
+            <div id="planet-four-text" class="button-style">Pokemon Search</div>
+            <div id="play-text">Want to change my universe?</div>
+            <div id="play-button" class="button-style">Play Creator</div>
+        </div>
+        <div id="creator-container">
+            <div id="creator-close"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="36px" height="36px"><path d="M0 0h24v24H0z" fill="none"/><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg></div>
+            <div id="planet-list"></div>
+            <button id="reset-universe" class="button-style">Reset Universe</button>
+            <button id="create-planet-button" class="button-style">Add Planet</button>
+        </div>
+        <div id="planet-one-info" class="info-card-layout">
+            <div class="top-header">Alexander J. McComb</div>
+            <div id="close-one" class="card-close card-item-style"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="36px" height="36px"><path d="M0 0h24v24H0z" fill="none"/><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg></div>
+            <div id="images-container" class="top-left card-item-style">
+                <img src="./test-photo.jpg" alt="stock photo">
+                <img src="./practice-image.jpg" alt="stock photo">
+                <img src="./practice-image.jpg" alt="stock photo">
+                <img src="./practice-image.jpg" alt="stock photo">
+            </div>
+            <div id="nasa-photo-container" class="top-right card-item-style"></div>
+            <div class="center-span card-item-style">
+                I asked myself, “do people really care to see or know anything about me if they found themselves here?”. I thought about that question for a while and came to the conclusion that this is “Myspace”, 😉, and I want to express myself. Things that get me excited include baseball, rockets, space, tech, and learning. Yeah I know, learning, really?! I love finding out new things or understanding how complicated things work. Above are some photos of me and an image from the NASA API for photo of the day. View my twitter, (mostly weird ramblings and occasional dev stuff), github, and linkedin below. Oh, check out what music on youtube I'm listening too that helps me to zen out and focus.
+            </div>
+            <div id="twitter" class="bottom-left card-item-style logo-links">
+                <i class="fab fa-twitter" style="color: white; font-size: 2.5em"></i>
+            </div>
+            <div id="github" class="bottom-center-left card-item-style logo-links">
+                <i class="fab fa-github" style="color: white; font-size: 2.5em"></i>
+            </div>
+            <div id="linkedin" class="bottom-center-right card-item-style logo-links">
+                <i class="fab fa-linkedin-in" style="color: white; font-size: 2.5em"></i>
+            </div>
+            <div id="youtube" class="bottom-right card-item-style logo-links">
+                <i class="fab fa-youtube" style="color: white; font-size: 2.5em"></i>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="orbit.js"></script>
+</html>

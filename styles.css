@@ -1,0 +1,433 @@
+:root {
+    --dark-color: #1a1a1c;
+    --light-color:  #f8f8f8;
+}
+
+@media (max-width: 768px) {
+    #planet-one-info {
+        width: 85%;
+        height: 70%;
+        left: 5%;
+    }
+}
+
+@media (min-width: 769px) {
+    #planet-one-info {
+        width: 40%;
+        height: 80%;
+        left: 30%;
+    }
+}
+
+body {
+    margin: 0;
+    border: 0;
+    background-color: var(--dark-color);
+}
+
+#container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+}
+
+#light-dark-switch {
+    position: absolute;
+    z-index: 5;
+    top: 1em;
+    left: 1em;
+    cursor: pointer;
+}
+
+#info-switch {
+    position: absolute;
+    z-index: 5;
+    top: 1em;
+    right: 1em;
+    cursor: pointer;
+}
+
+#welcome-banner {
+    position: absolute;
+    color: #fff;
+    font-family: 'Permanent Marker', cursive;
+    background-color: var(--dark-color);
+    display: flex;
+    font-size: 3em;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+#space-time {
+    background-color: var(--dark-color);
+    width: 100%;
+}
+
+#project-container {
+    font-family: 'Quicksand', sans-serif;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 50px 100px 100px 100px 100px 2fr 100px;
+    gap: 10px 0px;
+    grid-template-areas:
+        ". x"
+        "red-planet red-planet-text"
+        "green-planet green-planet-text"
+        "blue-planet blue-planet-text"
+        "purple-planet purple-planet-text"
+        ". ."
+        "play-text play-button";
+    justify-items: center;
+    align-items: center;
+    position: absolute;
+    width: 400px;
+    right: calc(-400px + -2em);
+    top: 0;
+    height: 100%;
+    padding: 1em;
+    background-color: var(--light-color);
+    z-index: 10;
+}
+
+#creator-container {
+    font-family: 'Quicksand', sans-serif;
+    position: absolute;
+    width: 400px;
+    right: calc(-400px + -2em);
+    top: 0;
+    height: 100%;
+    padding: 1em;
+    display: grid;
+    background-color: rgba(255, 255, 255, 0.2);
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 50px 1fr 100px;
+    grid-template-areas: 
+        ". close"
+        "list list"
+        "reset create";
+    z-index: 15;
+}
+
+.button-style {
+    width: 80%;
+    height: 50%;
+    border: double 4px transparent;
+    border-radius: 80px;
+    background-image: linear-gradient(white, white), radial-gradient(circle at top left,  #de2d16, #6517e3);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.button-style:hover {
+    box-shadow: 0px 0px 3px 0px rgba(0,0,0,1);
+}
+
+.info-card-layout {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 3em repeat(2, 2fr) 1fr;
+    grid-column-gap: 1em;
+    grid-row-gap: 1em;
+    grid-template-areas: 
+        "name name name close"
+        "top-left top-left top-right top-right"
+        "center-span center-span center-span center-span"
+        "bottom-left bottom-center-left bottom-center-right bottom-right";
+}
+
+.card-item-style {
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    border-radius: 0.5em;
+}
+
+.top-header {
+    grid-area: name;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.2em;
+    font-weight: bolder;
+    align-self: center;
+}
+
+.card-close {
+    grid-area: close;
+    background-color: var(--dark-color);
+}
+
+.top-left {
+    grid-area: top-left;
+    overflow: hidden;
+}
+
+.top-left img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.top-right {
+    grid-area: top-right;
+    overflow: hidden;
+}
+
+.center-span {
+    grid-area: center-span;
+    background-color: var(--dark-color);
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+    padding: 1em;
+    text-align: justify;
+}
+
+.bottom-left {
+    grid-area: bottom-left;
+    background-color: #1DA1F2;
+}
+
+.bottom-center-left {
+    grid-area: bottom-center-left;
+    background-color: #24292e;
+}
+
+.bottom-center-right {
+    grid-area: bottom-center-right;
+    background-color: #2867B2;
+}
+
+.bottom-right {
+    grid-area: bottom-right;
+    background-color: #FF0000;
+}
+
+#creator-close {
+    grid-area: close;
+    justify-self: end;
+    align-self: center;
+    background-color: var(--dark-color);
+    border-radius: 0.5em;
+    cursor: pointer;
+}
+
+#planet-list {
+    grid-area: list;
+    overflow: overlay;
+}
+
+#planet-list::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+#planet-list::-webkit-scrollbar-thumb {
+    background: rgba(90, 90, 90);
+}
+
+#planet-list::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+#create-planet-button {
+    grid-area: create;
+    justify-self: center;
+    align-self: center;
+    padding: 0;
+}
+
+#reset-universe {
+    grid-area: reset;
+    justify-self: center;
+    align-self: center;
+    padding: 0;
+}
+
+#project-close {
+    grid-area: x;
+    justify-self: end;
+    cursor: pointer;
+}
+
+#planet-one {
+    grid-area: red-planet;
+    width: 5px;
+    height: 5px;
+    background-color: #de2d16;
+    border-radius: 60px;
+    box-shadow: 0 0 5px 2.5px #de2d16;
+}
+
+#planet-one-text {
+    grid-area: red-planet-text;
+}
+
+#planet-two {
+    grid-area: green-planet;
+    width: 10px;
+    height: 10px;
+    background-color:#14c71d;
+    border-radius: 60px;
+    box-shadow: 0 0 5px 2.5px #14c71d;
+}
+
+#planet-two-text {
+    grid-area: green-planet-text;
+}
+
+#planet-three {
+    grid-area: blue-planet;
+    width: 15px;
+    height: 15px;
+    background-color: #1798e3;
+    border-radius: 60px;
+    box-shadow: 0 0 5px 2.5px#1798e3;
+}
+
+#planet-three-text {
+    grid-area: blue-planet-text;
+}
+
+#planet-four {
+    grid-area: purple-planet;
+    width: 20px;
+    height: 20px;
+    background-color: #6517e3;
+    border-radius: 60px;
+    box-shadow: 0 0 5px 2.5px #6517e3;
+}
+
+#planet-four-text {
+    grid-area: purple-planet-text;
+}
+
+#play-text {
+    grid-area: play-text;
+    font-style: italic;
+}
+
+#play-button {
+    grid-area: play-button;
+}
+
+#planet-one-info {
+    position: absolute;
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    margin: 0 auto;
+    display: none;
+    top: 10%;
+    padding: 1em;
+    border-radius: 1em;
+}
+
+#close-one {
+    justify-self: end;
+    align-self: center;
+    cursor: pointer;
+}
+
+.logo-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.logo-links:hover {
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,1);
+}
+
+.divider {
+    flex-grow: 1;
+    border-bottom: 1px solid var(--light-color);
+    margin: 10px;
+}
+
+.fade-out {
+    animation: fade-out 2s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+}
+
+.fade-in {
+    animation: fade-in 2s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+}
+
+.scale-in {
+    animation: slide-in 0.5s ease-in normal;
+}
+
+.scale-out {
+    animation: slide-out 0.5s ease-out normal;
+}
+
+.planet-stats-body {
+    width: 98%;
+    height: 100px;
+    display: grid;
+    border-radius: 0.5em;
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+    grid-template-columns: 0.5fr 0.75fr 1fr 1.1fr 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    align-items: center;
+    justify-items: center;
+    margin-bottom: 1em;
+    margin-left: 0.1em;
+  }
+  
+  .p-stat { grid-area: 1 / 1 / 2 / 2; }
+  .x-stat { grid-area: 1 / 2 / 2 / 3; }
+  .y-stat { grid-area: 1 / 3 / 2 / 4; }
+  .v-stat { grid-area: 1 / 4 / 2 / 5; }
+  .a-stat { grid-area: 1 / 5 / 2 / 6; }
+  .c-stat { grid-area: 2 / 1 / 3 / 3; }
+  .r-stat { grid-area: 2 / 3 / 3 / 4; }
+  .m-stat { grid-area: 2 / 4 / 3 / 5; }
+  .t-stat { grid-area: 2 / 5 / 3 / 6; }
+
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slide-in {
+    0% {
+        transform: scale(0);
+        transform-origin: 0% 100%;
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        transform-origin: 0% 100%;
+        opacity: 1;
+    }
+}
+
+@keyframes scale-out {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0);
+    }
+}
