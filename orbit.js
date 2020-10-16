@@ -1,5 +1,3 @@
-
-
 var isLightMode = false;
 
 var canvas, width, height, ctx;
@@ -14,48 +12,30 @@ var bodies = [];
 var moveInFromRight = [
     {transform: 'translateX(0px)'},
     {transform: 'translateX(-432px)'}
-]
+];
 
 var slideInFromRight = [
     {transform: 'scale(0)', transformOrigin: '200% 50%'},
     {transform: 'scale(1)'}
-]
+];
 
 var slideUp = [
     {transform: 'translateY(100%)'}
-]
-
-var slideIn = [
-    {transform: 'scale(0)', opacity: '0'},
-    {transform: 'scale(1)', opacity: '1'}
-]
-
-var slideOut = [
-    {transform: 'scale(1)', opacity: '1'},
-    {transform: 'scale(0)', opacity: '0'}
-]
+];
 
 var projectClose = document.getElementById("project-close");
-
 var planetOneButton = document.getElementById("planet-one-text");
+var planetTwoButton = document.getElementById("planet-two-text");
+var planetThreeButton = document.getElementById("planet-three-text");
+var planetFourButton = document.getElementById("planet-four-text");
 var planetOneInfo = document.getElementById("planet-one-info");
+var planetTwoInfo = document.getElementById("planet-two-info");
+var planetThreeInfo = document.getElementById("planet-three-info");
+var planetFourInfo = document.getElementById("planet-four-info");
 var closeOne = document.getElementById("close-one");
-
-var imagesContainer = document.getElementById("images-container");
-
-console.log(imagesContainer.children);
-
-function animateImages(){
-    for(i = 0; imagesContainer.children.length < i; i++){
-        console.log(imagesContainer.children[i]);
-        imagesContainer.children[i].animate(
-            slideUp,
-            {
-                easing: "ease-in-out"
-            }
-        )
-    }
-}
+var closeTwo = document.getElementById("close-two");
+var closeThree = document.getElementById("close-three");
+var closeFour = document.getElementById("close-four");
 
 document.getElementById("twitter").onclick = function(){
     location.href = "https://twitter.com/AgedMcNugget";
@@ -68,6 +48,24 @@ document.getElementById("linkedin").onclick = function(){
 }
 document.getElementById("youtube").onclick = function(){
     location.href = "https://www.youtube.com/watch?v=2WtiKh7HMak";
+}
+document.getElementById("shelf-project").onclick = function(){
+    location.href = "https://oeromilk.github.io/shelf/";
+}
+document.getElementById("shelf-code").onclick = function(){
+    location.href = "https://github.com/Oeromilk/shelf";
+}
+document.getElementById("cache-project").onclick = function(){
+    location.href = "https://cache-up.web.app/";
+}
+document.getElementById("cache-code").onclick = function(){
+    location.href = "https://github.com/Oeromilk/Cache-Up";
+}
+document.getElementById("pokemon-project").onclick = function(){
+    location.href = "https://oeromilk.github.io/pokemon-app/";
+}
+document.getElementById("pokemon-code").onclick = function(){
+    location.href = "https://github.com/Oeromilk/pokemon-app";
 }
 
 var nasaPhotoContainer = document.getElementById("nasa-photo-container");
@@ -121,11 +119,85 @@ planetOneButton.addEventListener("click", function(){
             fill: "forwards"
         }
     )
-    
+})
+
+planetTwoButton.addEventListener("click", function(){
+    closeInfo();
+    planetTwoInfo.style.display = "grid";
+    planetTwoInfo.animate(
+        slideInFromRight,
+        {
+            duration: 500,
+            easing: "ease-in",
+            fill: "forwards"
+        }
+    )
+})
+
+planetThreeButton.addEventListener("click", function(){
+    closeInfo();
+    planetThreeInfo.style.display = "grid";
+    planetThreeInfo.animate(
+        slideInFromRight,
+        {
+            duration: 500,
+            easing: "ease-in",
+            fill: "forwards"
+        }
+    )
+})
+
+planetFourButton.addEventListener("click", function(){
+    closeInfo();
+    planetFourInfo.style.display = "grid";
+    planetFourInfo.animate(
+        slideInFromRight,
+        {
+            duration: 500,
+            easing: "ease-in",
+            fill: "forwards"
+        }
+    )
 })
 
 closeOne.addEventListener("click", function(){
     planetOneInfo.animate(
+        slideInFromRight,
+        {
+            duration: 500,
+            easing: "ease-in",
+            direction: "reverse",
+            fill: "forwards"
+        }
+    )
+})
+
+closeTwo.addEventListener("click", function(){
+    planetTwoInfo.animate(
+        slideInFromRight,
+        {
+            duration: 500,
+            easing: "ease-in",
+            direction: "reverse",
+            fill: "forwards"
+        }
+    )
+})
+
+closeThree.addEventListener("click", function(){
+    planetThreeInfo.animate(
+        slideInFromRight,
+        {
+            duration: 500,
+            easing: "ease-in",
+            direction: "reverse",
+            fill: "forwards"
+        }
+    )
+})
+
+closeFour.addEventListener("click", function(){
+    planetFourInfo.animate(
         slideInFromRight,
         {
             duration: 500,
@@ -238,7 +310,7 @@ welcomeBanner.addEventListener("animationend", function(){
     welcomeBanner.style.display = "none";
 });
 
-setTimeout(animateWelcomeBanner, 2000);
+setTimeout(animateWelcomeBanner, 750);
 
 function animateWelcomeBanner(){
     welcomeBanner.classList.add("fade-out");
@@ -264,13 +336,6 @@ async function getNASAPhoto(){
     image.setAttribute("style", "object-fit: cover; width: 100%; height: 100%;")
     nasaPhotoContainer.append(image);
     return response;
-}
-
-function setNASAPhoto(){
-    let image = document.createElement("img");
-    image.src = getNASAPhoto();
-    image.width = "100%";
-    nasaPhotoContainer.append(image);
 }
 
 function addPlanetElement(body, i){
@@ -360,11 +425,12 @@ function getRandomColor(){
 }
 
 function createBodies(){
-    bodies.push(new Body((this.width / 2), (this.height / 2) - 450, 200, 0, 5, 20, "#6517e3", true));
+    bodies.push(new Body((this.width / 2), (this.height / 2) - 525, 125, 0, 20, 30, "#e034e0", true));
+    bodies.push(new Body((this.width / 2), (this.height / 2) + 450, 200, 0, 5, 20, "#6517e3", true));
     bodies.push(new Body((this.width / 2), (this.height / 2) - 300, 250, 0, 2, 15, "#1798e3", true));
-    bodies.push(new Body((this.width / 2), (this.height / 2) - 200, 300, 0, 1, 10, "#14c71d", true));
+    bodies.push(new Body((this.width / 2), (this.height / 2) + 200, 300, 0, 1, 10, "#14c71d", true));
     bodies.push(new Body((this.width / 2), (this.height / 2) - 125, 400, 0, 1, 5, "#de2d16", true));
-    bodies.push(new Body(this.width / 2, this.height / 2, 0, 0, 1000000, 30, "#FF8501", false)); //sun
+    bodies.push(new Body(this.width / 2, this.height / 2, 0, 0, 1000000, 50, "#FF8501", false)); //sun
 }
 
 function drawBodies(){
@@ -418,7 +484,7 @@ function Body(x, y, v, angle, mass, radius, color, hasTail){
     this.ay = 0;
 
     if(hasTail){
-        this.tail = new Tail(50);
+        this.tail = new Tail(30);
     }
 
     this.update = function(dt){

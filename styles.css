@@ -3,19 +3,35 @@
     --light-color:  #f8f8f8;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
     #planet-one-info {
         width: 85%;
-        height: 70%;
+        height: 80%;
         left: 5%;
+    }
+    .info-container {
+        width: 85%;
+        height: 80%;
+        left: 5%;
+    }
+    .description-text {
+        font-size: 14px;
     }
 }
 
-@media (min-width: 769px) {
+@media (min-width: 1201px) {
     #planet-one-info {
-        width: 40%;
+        width: 50%;
         height: 80%;
-        left: 30%;
+        left: 25%;
+    }
+    .info-container {
+        width: 50%;
+        height: 80%;
+        left: 25%;
+    }
+    .description-text {
+        font-size: 1em;
     }
 }
 
@@ -112,6 +128,46 @@ body {
         "list list"
         "reset create";
     z-index: 15;
+}
+
+.info-container {
+    font-family: 'Quicksand', sans-serif;
+    display: grid;
+    grid-template-columns: 1fr repeat(2, 0.5fr);
+    grid-template-rows: 50px repeat(5, 1fr);
+    grid-column-gap: 1em;
+    grid-row-gap: 1em;
+}
+    
+.div1 { 
+    grid-area: 1 / 1 / 2 / 2; 
+}
+.div2 { 
+    grid-area: 1 / 3 / 2 / 4; 
+}
+.div3 { 
+    grid-area: 2 / 1 / 3 / 2; 
+}
+.div4 { 
+    grid-area: 2 / 2 / 3 / 4; 
+}
+.div5 { 
+    grid-area: 3 / 1 / 6 / 3; 
+}
+.div6 { 
+    grid-area: 3 / 3 / 4 / 4; 
+}
+.div7 { 
+    grid-area: 4 / 3 / 5 / 4; 
+}
+.div8 { 
+    grid-area: 5 / 3 / 6 / 4; 
+}
+.div9 { 
+    grid-area: 6 / 1 / 7 / 2; 
+}
+.div10 { 
+    grid-area: 6 / 2 / 7 / 4; 
 }
 
 .button-style {
@@ -328,10 +384,65 @@ body {
     border-radius: 1em;
 }
 
-#close-one {
-    justify-self: end;
+#planet-two-info {
+    position: absolute;
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    margin: 0 auto;
+    display: none;
+    top: 10%;
+    padding: 1em;
+    border-radius: 1em;
+}
+
+#planet-three-info {
+    position: absolute;
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    margin: 0 auto;
+    display: none;
+    top: 10%;
+    padding: 1em;
+    border-radius: 1em;
+}
+
+#planet-four-info {
+    position: absolute;
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    margin: 0 auto;
+    display: none;
+    top: 10%;
+    padding: 1em;
+    border-radius: 1em;
+}
+
+.project-close {
     align-self: center;
+    justify-self: end;
     cursor: pointer;
+}
+
+.project-heading {
+    align-self: center;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.project-description {
+    background-color: var(--dark-color);
+    color: white;
+    padding: 1em;
+}
+
+.project-actions {
+    justify-self: center;
+    align-self: center;
+}
+
+.project-buttons {
+    width: 150px;
+    height: 60px;
 }
 
 .logo-links {
@@ -339,6 +450,10 @@ body {
     justify-content: center;
     align-items: center;
     cursor: pointer;
+}
+
+.overflow-hidden {
+    overflow: hidden;
 }
 
 .logo-links:hover {
@@ -398,36 +513,5 @@ body {
     }
     100% {
         opacity: 0;
-    }
-}
-
-@keyframes fade-in {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-@keyframes slide-in {
-    0% {
-        transform: scale(0);
-        transform-origin: 0% 100%;
-        opacity: 0;
-    }
-    100% {
-        transform: scale(1);
-        transform-origin: 0% 100%;
-        opacity: 1;
-    }
-}
-
-@keyframes scale-out {
-    0% {
-        transform: scale(1);
-    }
-    100% {
-        transform: scale(0);
     }
 }
