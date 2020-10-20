@@ -11,7 +11,7 @@ var bodies = [];
 
 var moveInFromRight = [
     {transform: 'translateX(0px)'},
-    {transform: 'translateX(-432px)'}
+    {transform: 'translateX(-382px)'}
 ];
 
 var slideInFromRight = [
@@ -211,7 +211,10 @@ closeFour.addEventListener("click", function(){
 playButton.addEventListener("click", function(){
     closeInfo();
     creatorContainer.animate(
-        moveInFromRight,
+        [
+            {transform: 'translateX(0px)'},
+            {transform: 'translateX(-420px)'}
+        ],
         {
             duration: 500,
             easing: "ease-in",
@@ -319,7 +322,7 @@ function animateWelcomeBanner(){
 function clearBodiesAndReset(){
     bodies = [];
     removeAllChildNodes(planetListContainer);
-    init();
+    createBodies();
 }
 
 function removeAllChildNodes(parent){
@@ -392,6 +395,7 @@ function init(){
     canvas.width = width;
     canvas.height = height;
     ctx = canvas.getContext('2d');
+    
 
     getNASAPhoto();
     createBodies();
