@@ -299,6 +299,7 @@ body {
     background-color: var(--dark-color);
     border-radius: 0.5em;
     cursor: pointer;
+    margin-right: 0.5em;
 }
 
 #planet-list {
